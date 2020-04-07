@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Covid-19 Checker</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&display=swap" rel="stylesheet">
+
+    <script defer src="js/app.js"></script>
+  </head>
+  <body>
+    <header class="header">  <h2>COVID- 19 Checker</h2></header>
+    <div id="description">
+         <p>
+            This site uses a simple logic that helps confirm whether an instance
+            <br />
+            of collective potential covid 19 symptoms is low, mild or high risk.
+          </p>
+          <p>Simply tick yes or no to any of the questions below</p>
+          <p>Your medical recommendation will show up at the bottom of the page</p>
+          <p>
+            Disclaimer: This site is not run by a health professional.<br />
+            <span id="shift"> I am an entry-level web developer.</span>
+          </p>
+    
+    
+    
+        </div>
+    
+    <div id="container">
+        <form action="javascript:void(0)">  
+          <p>
+            <span class="label">Gender:</span>
+            <select name="sex" onchange="manage(this)">
+              <option value=""> -- select one --</option>
+              <option value="male">Male</option>
+              <option vlaue="female">Female</option>
+            </select>
+          
+
+          
+            <span class="label">Age:</span>
+            <select name="age" onchange="manage(this)">
+              <option value=""> -- select one --</option>
+              <option value="a">Below 18</option>
+              <option value="b">18 - 49 </option>
+              <option value="c">Above 50</option>
+            </select>
+          </p>
+          <div class="radio-group">
+          
+          <ol > 
+            <li>
+              <p>
+                Are you coughing?<br />
+                <label class="radio">Yes:
+                <input
+                  type="radio"
+                  name="cough"
+                  value="yes"
+                  onchange="manage(this)"
+                  id="one"
+                />   
+            </label>
+                <label class="radio"> No:
+                <input
+                  type="radio"
+                  name="cough"
+                  value="no"
+                  onchange="manage(this)"
+                />
+                
+            </label>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Do you feel feverish (Tick yes even if fever is mild)? <br />
+                <label class="radio">
+                Yes:
+                <input
+                  type="radio"
+                  name="fever"
+                  value="yes"
+                  onchange="manage(this)"
+                  id="one"
+                />
+            </label>
+        <label class="radio">No:
+                <input
+                  type="radio"
+                  name="fever"
+                  value="no"
+                  onchange="manage(this)"
+                />
+                </label>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Do you experience any difficulty in breathing?<br />
+               <label class="radio"> Yes:
+                <input
+                  type="radio"
+                  name="breathe"
+                  value="yes"
+                  onchange="manage(this)"
+                />
+            </label>
+            <label class="radio">
+                No:
+                <input
+                  type="radio"
+                  name="breathe"
+                  value="no"
+                  onchange="manage(this)"
+                />
+            </label>
+              </p>
+            </li>
+ 
+            <li>
+              <p>
+
+                Are you having a sore throat?<br />
+                <label class="radio">Yes:
+                <input
+                  type="radio"
+                  name="throat"
+                  value="yes"
+                  onchange="manage(this)"
+                />
+            </label>
+        
+              <label class="radio">  No:
+                <input
+                  type="radio"
+                  name="throat"
+                  value="no"
+                  onchange="manage(this)"
+                />
+            </label>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Do you experience full body aches?<br />
+                <label class="radio">Yes:
+                <input
+                  type="radio"
+                  name="ache"
+                  value="yes"
+                  onchange="manage(this)"
+                />
+            </label>
+            <label class="radio">
+                No:
+                <input
+                  type="radio"
+                  name="ache"
+                  value="no"
+                  onchange="manage(this)"
+                />
+            </label>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Have you come into contact with an individual showing any of
+                the above mentioned symptoms? <br />
+                <label class="radio">Yes:
+                <input
+                  type="radio"
+                  name="contact"
+                  value="yes"
+                  onchange="manage(this)"
+                />
+            </label>
+
+            <label class="radio">    No:
+                <input
+                  type="radio"
+                  name="contact"
+                  value="no"
+                  onchange="manage(this)"
+                />
+            </label>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Have you travelled to any other Covid-19 infected country in the
+                last month? <br />
+                <label class="radio">
+                Yes:
+                <input
+                  type="radio"
+                  name="travel"
+                  value="yes"
+                  onchange="manage(this)"
+                />
+            </label>
+               <label class="radio"> No:
+                <input
+                  type="radio"
+                  name="travel"
+                  value="no"
+                  onchange="manage(this)"
+                />
+            </label>
+              </p>
+            </li>
+          </ol>
+      
+       <p><button onclick="submitAnswers()" id="btn" class="btn-submit" disabled href="#answer">Submit</button></p>
+       
+        <!-- <p><a href="#answer" onclick="submitAnswers()" id="btn" class="btn-submit" disabled>Submit</a></p> -->
+    </p> <button onclick="resetForm()" class="btn-reset">Reset</button></p>
+      </form>
+    </div>
+    <div id="answer">Your recommendation will show here!
+    </div>
+
+  </body>
+</html>
